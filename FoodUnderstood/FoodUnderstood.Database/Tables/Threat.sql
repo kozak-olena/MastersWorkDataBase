@@ -1,0 +1,6 @@
+﻿CREATE TABLE [dbo].[Threat]
+(
+    [Id] INT NOT NULL IDENTITY(1, 1) CONSTRAINT [PK_Threat] PRIMARY KEY,
+    [Name] NVARCHAR(255) NOT NULL CONSTRAINT [UQ_Threat_Name] UNIQUE,
+    [ThreatGroupId] INT NOT NULL CONSTRAINT [FK_Threat_ThreatGroup] FOREIGN KEY REFERENCES [dbo].[ThreatGroup](Id)
+)
